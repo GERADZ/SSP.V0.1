@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gera</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">SSP</a>
+
+        <i class='bx bx-menu-alt-left' id="menu-icon"></i> 
+
+        <nav class="navbar" id="navbarid">
+
+ 
+        </nav>
+    </header>
+    <section class="loginRegister" id="bg_Register">
+        <div class="logincontainer">
+            <br>
+            <div class="title-loginBox">
+                <div class="redbutton">
+                    <a href="#" id="cancelregister"><i class='bx bxs-chevron-left-square'></i></a>
+                </div>
+            </div>
+            <div class="inputContaier">
+                <div class="inputbox">
+                    <div class="form-box" >
+                        <h2 class="animation">register</h2>
+
+                        <form action="#" id="register-form">
+                            <div class="input-box animation">
+                                <input type="text" required id="register-name">
+                                <label>name</label>
+                                <i class='bx bxs-user'></i>
+                            </div>
+
+                            <div class="input-box animation">
+                                <input type="text" required id="register-email">
+                                <label>Email</label>
+                                <i class='bx bxs-envelope' ></i>
+                            </div>
+        
+                            <div class="input-box animation">
+                                <input type="password" required id="register-password" >
+                                <label>Passeword</label>
+                                <i class='bx bxs-lock-alt'></i>
+                            </div>
+                            <button type="submit" class="btn">Register</button>
+                        </form>
+                    </div>
+        
+                </div>
+                <div class="spinnerbox">
+                    <div class="imgLogin">
+                        <img src="img/icon1_Plan de travail 1.png" alt="">
+                    </div>
+                    <div class="imgLogin speen" id="register-spinner" style="display: none;">
+                        <i class='bx bxs-sun bx-spin' ></i>
+                    </div>
+                    <h3 id="register-message"></h3>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="loginRegister" id="loginRegister">
+        <div class="logincontainer">
+            <div class="title-loginBox">
+                <div class="redbutton">
+                    <a href="#" id="cancelLogin"><i class='bx bxs-chevron-left-square'></i></a>
+                </div>
+                <div class="registerbutton" id="nextToregister">
+                    <a href="#"><i class='bx bx-user-plus'>Register</i></a> 
+                </div>
+            </div>
+            <div class="inputContaier">
+                <div class="inputbox">
+                    <div class="form-box" >
+                        <h2 class="animation">Login</h2>
+                        <form action="#" id="login-form">
+                            <div class="input-box animation">
+                                <input type="text" required id="login-email">
+                                <label>Email</label>
+                                <i class='bx bxs-user'></i>
+                            </div>
+        
+                            <div class="input-box animation">
+                                <input type="password" required id="login-password" >
+                                <label>Passeword</label>
+                                <i class='bx bxs-lock-alt'></i>
+                            </div>
+                            <button type="submit" class="btn">Login</button>
+                        </form>
+                    </div>
+        
+                </div>
+                <div class="spinnerbox">
+                    <div class="imgLogin">
+                        <img src="img/icon1_Plan de travail 1.png" alt="">
+                    </div>
+                    <div class="imgLogin speen" id="imgLoginSpeen" style="display: none;">
+                        <i class='bx bxs-sun bx-spin' ></i>
+                    </div>
+                    <h3 id="loginmessage"></h3>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="Home">
+        <div class="video-container">
+            <video autoplay loop muted>
+                <source src="vd/Animated Map Path (After Effects template).mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="videocontainerbottom"></div>
+        </div>
+        <div class="content">
+            <h1>Hello SSP website</h1>
+            <h2>For the best selection of your location for CSP and PV projects</h2>
+            <div class="containeroptions">
+                <div class="box-option">
+                    <h1 class="greenText">TRY FOR FREE</h1><br>
+                    <i class='bx bx-gift'></i><br><br>
+                    <h3>Through this feature, you can experience our website in a limited capacity.
+
+                    </h3><br><br>
+                    <a href="freeMode.html" class="btn">START</a>
+                </div>
+                <div class="box-option">
+                    <h1 class="primumText">SERVICE PROVISION</h1><br>
+                    <i class='bx bxs-comment-dots'></i><br><br>
+                    <h3>Through this feature, you can contact us and request a ready-made report for your project. </h3><br><br>
+                    <a href="" class="btn">START</a>
+                
+                </div>
+                <div class="box-option">
+                    <h1 class="primumText">PREMIUM</h1><br>
+                    <i class='bx bx-purchase-tag-alt'></i><br><br>
+                    <h3>Through this feature,<br> you can benefit from endless offers.</h3><br><br>
+                    <a href="#" class="btn" id="premiumbtn">START</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="tab-content">
+        <div class="container">
+
+            <!-- Tab Content 3 -->
+            <div id="tab-3-content" class="tab-content-item">
+                <div class="text-center">
+                    <h1 class="text-lg">
+                        CHOOSE YOUR PLAN.
+                    </h1><br><br>
+                </div>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>free</th>
+                            <th>Premium</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monthly/service price</td>
+                            <td>$ 0.00</td>
+                            <td>$49.99</td>
+                        </tr>
+                        <tr>
+                            <td>Automatic data recovery</td>
+                            <td><i class='bx bx-x'></i></td>
+                            <td><i class='bx bx-check'></i></td>
+                        </tr>
+                        <tr>
+                            <td>Enter the data manually</td>
+                            <td><i class='bx bx-check'></i></td>
+                            <td><i class='bx bx-check'></i></td>
+                        </tr>
+                        <tr>
+                            <td>nombre of database you can use</td>
+                            <td>2</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td>nombre of location you can use</td>
+                            <td>2</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td>generate a report in PDF</td>
+                            <td><i class='bx bx-x'></i></td>
+                            <td><i class='bx bx-check'></i></td>
+                        </tr>
+                        <tr>
+                            <td>save the data that you have used in your account</td>
+                            <td><i class='bx bx-x'></i></td>
+                            <td><i class='bx bx-check'></i></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><a href="" class="startprimuim"><i class='bx bx-link-external' ></i></a></td>
+                            <td><a href="" class="startprimuim"><i class='bx bx-link-external' ></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script type="module" src="script.js"></script>
+    
+</body>
+</html>

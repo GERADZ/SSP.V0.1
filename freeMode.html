@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <title>SSP-free Mode</title>
+</head>
+<body>
+    <section class="helloFreeMode" id="helloFreeMode">
+        <div class="start_containers">
+            <div class="bar_option_container" id="bar_option_container">
+                <div class="content_bar_option">
+                    <a href="index.html">
+                        <img src="img/icon1_Plan de travail 1.png" >
+                    </a>
+                    <h1>OPTIONS :</h1>
+                    <p>INFO: you can use your private data by entering it directly in their places, in addition to you can use the SSP data by choosing their locations and databases </p><br>
+                    <h3>select data source :</h3><br>
+                    <select name="database" id="selectSoyrceDATA">
+                        <option value="0" disabled selected>select</option>
+                        <option value="1">YOUR DATA</option>
+                        <option value="2">SSP DATA</option>
+                    </select><br><br>
+                    <div class="SSP_data_select"id="SSP_data_select">
+                        <br>
+                        <h2>SSP DATA :</h2>
+                        <p>There are only Algerian locations.</p><br>
+
+                        <h2>location 1 :</h2><br>
+                        <h3>Name location 1 :</h3><br>
+                        <select id="location1">
+                            <option value="" disabled selected>location 1</option>
+                            <option value="HassiRmel">Hassi Rmel</option>
+                            <option value="naama">Naama</option>
+                        </select><br><br>
+
+                        <h3>database 1 for location 1</h3><br>
+                        <select id="L1database1">
+                            <option value="" disabled selected>database 1</option>
+                            <option value="PVGIS">PVGIS</option>
+                            <option value="SODA">SODA</option>
+                            <option value="NASASSE">NASASSE</option>
+                        </select><br><br>
+
+                        <h3>database 2 for location 1</h3><br>
+                        <select id="L1database2">
+                            <option value="" disabled selected>database 2</option>
+                            <option value="PVGIS">PVGIS</option>
+                            <option value="SODA">SODA</option>
+                            <option value="NASASSE">NASASSE</option>
+                          </select><br><br>
+
+                        <div class="ligne"></div><br>
+
+
+                        <h2>location 2 :</h2><br>
+                        <h3>Name location 2 :</h3><br>
+
+                        <select id="location2">
+                            <option value="" disabled selected>location 2</option>
+                            <option value="HassiRmel">Hassi Rmel</option>
+                            <option value="naama">Naama</option>
+                        </select><br><br>
+
+                        <h3>database 1 for location 2</h3><br>
+                        <select id="L2database1">
+                            <option value="" disabled selected>database 1</option>
+                            <option value="PVGIS">PVGIS</option>
+                            <option value="SODA">SODA</option>
+                            <option value="NASASSE">NASASSE</option>
+                        </select><br><br>
+
+                        <h3>database 2 for location 2</h3><br>
+                        <select id="L2database2">
+                            <option value="" disabled selected>database 2</option>
+                            <option value="PVGIS">PVGIS</option>
+                            <option value="SODA">SODA</option>
+                            <option value="NASASSE">NASASSE</option>
+                          </select>
+                          <br><br>
+                
+                    </div>
+                    <div class="result_for_btn" id="result_for_btn">
+                        <br><br>
+                        <h2>RESULT :</h2><br>
+                        <p class="remarque" id="remarque">you need to fill out all the inputs</p>
+                        <br>
+                        <button class="btn result_btn" id="result_btn">RESULT</button>
+                    </div>
+
+                </div>
+                <div class="barbuttonOfbarOption">
+                    <a href="#"><i class='bx bxs-chevron-left' id="left_btnbaroption"style="display: flex;"></i></a>
+                    <a href="#"><i class='bx bxs-chevron-right'id="right_btnbaroption"style="display: none;" ></i></a>
+                </div>
+            </div>
+            <div class="input_container" id="input_container">
+
+                <div class="sitecontainer">
+                    <div class="form-box" >
+                           <h2 class="animation">location 1</h2>
+                            <div class="input-box animation a">
+                                <input type="text" required id="nameLocation1" oninput="checkInput()">
+                                <label>Name location 1</label>
+                                <i class='bx bx-map'></i>
+                            </div>
+                            <div class="dbname">
+                                <div class="input-box animation a">
+                                    <input type="text" required id="NameDatabase1location1"oninput="checkInput()" class="DatabaseData1">
+                                    <label>Name Database 1 for location 1</label>
+                                </div>
+                            </div>
+
+                            <div class="dbcontent">
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat1jan"oninput="checkInput()"class="DatabaseData1">
+                                    <label>jan</label>
+                                </div>
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat1feb"oninput="checkInput()"class="DatabaseData1">
+                                    <label>feb</label>
+                                </div>
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat1mar"oninput="checkInput()"class="DatabaseData1">
+                                    <label>mar</label>
+                                </div>
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat1apr"oninput="checkInput()"class="DatabaseData1">
+                                    <label>Apr</label>
+                                </div>  
+   
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat1may"oninput="checkInput()"class="DatabaseData1">
+                                    <label>may</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat1jun"oninput="checkInput()"class="DatabaseData1">
+                                    <label>jun</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat1jul"oninput="checkInput()"class="DatabaseData1">
+                                    <label>jul</label>
+                                </div>   
+                       
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat1aug"oninput="checkInput()"class="DatabaseData1">
+                                    <label>aug</label>
+                                </div>
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat1sep"oninput="checkInput()"class="DatabaseData1">
+                                    <label>sep</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat1oct"oninput="checkInput()"class="DatabaseData1">
+                                    <label>oct</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat1nov"oninput="checkInput()"class="DatabaseData1">
+                                    <label>nov</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat1dec"oninput="checkInput()"class="DatabaseData1">
+                                    <label>dec</label>
+                                </div>
+                                <h1>kWh/m2</h1>
+                            </div>
+                            <div class="dbname">
+                                <div class="input-box animation a">
+                                    <input type="text" required id="NameDatabase2location1"oninput="checkInput()"class="DatabaseData2">
+                                    <label>Name Database 2 for location 1</label>
+                                </div>
+                            </div>
+
+                            <div class="dbcontent">
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat2jan"oninput="checkInput()"class="DatabaseData2">
+                                    <label>jan</label>
+                                </div>
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat2feb"oninput="checkInput()"class="DatabaseData2">
+                                    <label>feb</label>
+                                </div>
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat2mar"oninput="checkInput()"class="DatabaseData2">
+                                    <label>mar</label>
+                                </div>
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat2apr"oninput="checkInput()"class="DatabaseData2">
+                                    <label>Apr</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat2may"oninput="checkInput()"class="DatabaseData2">
+                                    <label>may</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat2jun"oninput="checkInput()"class="DatabaseData2">
+                                    <label>jun</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat2jul"oninput="checkInput()"class="DatabaseData2">
+                                    <label>jul</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat2aug"oninput="checkInput()"class="DatabaseData2">
+                                    <label>aug</label>
+                                </div>
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat2sep"oninput="checkInput()"class="DatabaseData2">
+                                    <label>sep</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat2oct"oninput="checkInput()"class="DatabaseData2">
+                                    <label>oct</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat2nov"oninput="checkInput()"class="DatabaseData2">
+                                    <label>nov</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo1Dat2dec"oninput="checkInput()"class="DatabaseData2">
+                                    <label>dec</label>
+                                </div>
+                                <h1>kWh/m2</h1>
+                            </div>
+
+                    </div>
+                    <div class="ligne"></div>
+
+                    <div class="form-box" >
+                        <h2 class="animation">location 2</h2>
+                            <div class="input-box animation a">
+                                <input type="text" required id="nameLocation2"oninput="checkInput()">
+                                <label>Name location 2</label>
+                                <i class='bx bx-map'></i>
+                            </div>
+                            <div class="dbname">
+                                <div class="input-box animation a">
+                                    <input type="text" required id="NameDatabase1location2"oninput="checkInput()"class="DatabaseData">
+                                    <label>Name Database 1 for location 2</label>
+                                </div>
+                            </div>
+
+                            <div class="dbcontent">
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat1jan"oninput="checkInput()"class="DatabaseData">
+                                    <label>jan</label>
+                                </div>
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat1feb"oninput="checkInput()"class="DatabaseData">
+                                    <label>feb</label>
+                                </div>
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat1mar"oninput="checkInput()"class="DatabaseData">
+                                    <label>mar</label>
+                                </div>
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat1apr"oninput="checkInput()"class="DatabaseData">
+                                    <label>Apr</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat1may"oninput="checkInput()"class="DatabaseData">
+                                    <label>may</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat1jun"oninput="checkInput()"class="DatabaseData">
+                                    <label>jun</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat1jul"oninput="checkInput()"class="DatabaseData">
+                                    <label>jul</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat1aug"oninput="checkInput()"class="DatabaseData">
+                                    <label>aug</label>
+                                </div>
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat1sep"oninput="checkInput()"class="DatabaseData">
+                                    <label>sep</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat1oct"oninput="checkInput()"class="DatabaseData">
+                                    <label>oct</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat1nov"oninput="checkInput()"class="DatabaseData">
+                                    <label>nov</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat1dec"oninput="checkInput()"class="DatabaseData">
+                                    <label>dec</label>
+                                </div>
+                                <h1>kWh/m2</h1>
+                            </div>
+                            <div class="dbname">
+                                <div class="input-box animation a">
+                                    <input type="text" required id="NameDatabase2location2"oninput="checkInput()"class="DatabaseData4">
+                                    <label>Name Database 2 for location 2</label>
+                                </div>
+                            </div>
+
+                            <div class="dbcontent">
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat2jan"oninput="checkInput()"class="DatabaseData4">
+                                    <label>jan</label>
+                                </div>
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat2feb"oninput="checkInput()"class="DatabaseData4">
+                                    <label>feb</label>
+                                </div>
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat2mar"oninput="checkInput()"class="DatabaseData4">
+                                    <label>mar</label>
+                                </div>
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat2apr"oninput="checkInput()"class="DatabaseData4">
+                                    <label>Apr</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat2may"oninput="checkInput()"class="DatabaseData4">
+                                    <label>may</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat2jun"oninput="checkInput()"class="DatabaseData4">
+                                    <label>jun</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat2jul"oninput="checkInput()"class="DatabaseData4">
+                                    <label>jul</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat2aug"oninput="checkInput()"class="DatabaseData4">
+                                    <label>aug</label>
+                                </div>
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat2sep"oninput="checkInput()"class="DatabaseData4">
+                                    <label>sep</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat2oct"oninput="checkInput()"class="DatabaseData4">
+                                    <label>oct</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat2nov"oninput="checkInput()"class="DatabaseData4">
+                                    <label>nov</label>
+                                </div>                                
+                                <div class="input-box animation a">
+                                    <input type="text" required id="lo2Dat2dec"oninput="checkInput()"class="DatabaseData4">
+                                    <label>dec</label>
+                                </div>
+                                <h1>kWh/m2</h1>
+                            </div>
+
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+        <div class="button_edit_container">
+            <a href="#"><i class='bx bxs-chevron-up' id="up_btn_container"  style="display: flex;"></i></a>
+            <a href="#"><i class='bx bxs-chevron-down'id="down_btn_container" style="display: none;"></i></a>
+        </div>
+    </section>
+    <section class="noresult" id="noresult" >
+            <img src="img/icon1_Plan de travail 1.png" alt="">
+            <h1>NO RESULT YET ... !</h1>
+    </section>
+    <section class="Yesresult" id="Yesresult"style="display: none;" >
+        <div class="back_container_content">
+            <div class="result_Container"id="result_Container">
+                
+                <div class="divresults" id="result_Cont" ></div>
+                <div id="display-container"></div>
+                
+  
+            </div>
+            <div class="menu_forResultCntainer" id="menu_forResultCntainer">
+                <div class="container_for_iconoption_result">
+                    <a href="#" id="right_icon_menu_resul" style="display: flex;"><i class='bx bxs-chevron-right' ></i></a>
+                    <a href="#" id="left_icon_menu_resul" style="display: none;"><i class='bx bxs-chevron-left' ></i></a>
+    
+                </div>
+    
+                <div class="container_for_optionresult" id="container_for_optionresult">
+                    <img src="img/icon1_Plan de travail 1.png" alt="">
+                    <h1>SSP RESULT</h1>
+                    <div class="optin_classemenet" id="optin_classemenet">
+                    </div>
+                    <br><br>
+
+                    <h1>MORE INFO</h1>
+                    <div class="menu_dashbaord_sites" id="menu_dashbaord_sites"></div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="freemode.js"></script>
+
+</body>
+</html>

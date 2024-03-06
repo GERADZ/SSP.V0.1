@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>SSP-home</title>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+</head>
+<body>
+    
+    <div class="container" id="accout_ssp_"> 
+        <div id="map" class="bg_priject"></div>
+
+        <div class="navbar_"id="content_Nav" >
+            <div class="logo__"><img src="img/icon1_Plan de travail 1.png" alt=""></div>
+            <div class="content_Nav" >
+                <a href="#" id="addDataNavbar"style="display: none;">Data</a>
+                <a href="#" id="locationsNavbar"style="display: none;">Locations</a>
+                <a href="projectSSP.html" id="project_bar_btn"style="display: block;">Projects</a>
+                <a href="#"id="Payment_bar_btn"style="display: none;">Payment</a>
+                <a href="#"id="Accountbarbtn"style="display: none;">Account</a>
+                <a href="#"id="returntohome"style="display: none;">return</a>
+
+                <a href="index.html"id="login_bar_btn" style="display: block;">LOGIN</a>
+
+            </div>
+        </div>
+
+    <div class="addDataSelect" id="addDataSelect"style="display: none;">
+        <a href="#" id="addDataSelectCancel"><i class='bx bxs-x-square'></i></a>
+        <h1>Import Data</h1>
+        <p>There are two options for importing data. Select one of them to start your project.</p>
+        <br>            
+        <select name="addDataTypaSelect" id="addDataTypaSelect">
+            <option value="0" disabled selected>select</option>
+            <option value="1">manual</option>
+            <option value="2">automatic</option>                
+        </select><br><br>
+
+    </div>
+
+    <div class="addDatManuSite" id="addDatManuSite" style="display: none;">
+        <a href="#" id="addDatManuSiteCancel"><i class='bx bxs-x-square'></i></a>
+        <h1>Manual Data Entry</h1>
+        <p>First, add your location information to your account. Afterward, you can input data for each location to use it in your projects.</p>
+        <br> 
+    
+        <input type="checkbox" id="myCheckbox"> i want to edit my data location! </input>  <br> <br>      
+        <div id="sle"  style="display: none;">
+            <select name="mydatalocationselect" id="mydatalocationselect"  class="selectt">
+                <option value="0" disabled selected>select location</option>               
+            </select>
+        </div>
+
+        <br>
+        <div class="inputss">
+            <label for="nameLocation">Name location</label>
+            <input type="text" id="nameLocation" maxlength="15">
+            <br>
+            <label for="latitude">Latitude</label>
+            <input type="text" id="latitude">
+            <br>            
+            <label for="longitude">Longitude</label>
+            <input type="text" id="longitude">
+            <br>
+        </div>
+        <div class="buttonss">
+            <button class="addbuttonss" id="addLocationINFO" style="display: flex;">add</button>
+            <button class="editbuttonss"id="editLocationINFO"style="display: none;">edit</button>
+            <button class="deletbuttonss"id="deletLocationINFO"style="display: none;">delete</button>
+        </div>
+        
+
+
+
+
+
+        <div>
+
+        </div>
+
+    </div>
+
+    <div class="addDatAutoSite" id="addDatAutoSite" style="display: none;">
+        <a href="#" id="addDatAutoSiteCancel"><i class='bx bxs-x-square'></i></a>
+        <h1>Automatic Data Entry</h1>
+        <p>First, add your location information to your account. Afterward, you can import data from NASASSE to use it in your projects.</p>
+        <br> 
+        <div class="inputss">
+            <label for="nameLocation">Name location</label>
+            <input type="text" id="nameLocationimport">
+            <br>
+            <label for="latitude">Latitude</label>
+            <input type="text" id="latitudeimport">
+            <br>            
+            <label for="longitude">Longitude</label>
+            <input type="text" id="longitudeimport">
+            <br>
+        </div>
+        <div class="buttonss">
+            <button class="importbuttonss" id="importLocationINFO">import</button>
+        </div>
+        <div class="importingText">
+            <p id="importingText1"style="display: none;" >importing location informations ...</p>
+            <p id="importingText2"style="display: none;" >location added successfuly ...</p>
+            <p id="importingText3"style="display: none;" >Nasa SSE & PVGIS importing data successfully to location ...</p>
+            <p class="wait" id="wait" style="display: none;">wait... </p>
+            <br>
+            <p id="importingText4"style="display: none; color:green;" >2025/2020 => data saved ..!</p>
+        </div>
+    </div>
+
+    <div class="locationdata" id="locationdata"style="display: none;">
+        <a href="#" id="locationdataCancel"><i class='bx bxs-x-square'></i></a>
+        <div class="locationdatacontainer" >
+            <h1>Loctions</h1>
+            <br>
+            <select id="select_locationName_">
+                <option value="0" disabled selected>select location</option>
+            </select>
+            
+            <br><br>
+            <input type="checkbox" id="checkBoxdb"> i have Database </input>  <br> <br>      
+            <select name="select_location_database" id="select_location_database"  style="display: none;">
+                <option value="0" disabled selected>select database</option>
+            </select><br>
+            <div id="inputNamecontainer" class="database__">
+                <br><br>
+                <label for="nameLocationInput"> Name Database</label>
+                <input type="text" id="nameLocationInput">
+            </div>
+            <div class="buttonss">
+                <br><br>
+                <button class="addbuttonss" id="addLocationDatabase_" style="display: flex;">add</button>
+                <button class="editbuttonss"id="editLocationDatabase_"style="display: none;">edit</button>
+                <button class="deletbuttonss"id="deletLocationDatabase_"style="display: none;">delete</button>
+            </div>
+
+        </div>
+
+        <div class="locationdatacontainer m">
+            <label for="jan_input">January</label>
+            <input type="text" id="jan_input">
+        
+            <label for="fev_input">February</label>
+            <input type="text" id="fev_input">
+            
+            <label for="mar_input">March</label>
+            <input type="text" id="mar_input">
+            
+            <label for="av_input">April</label>
+            <input type="text" id="av_input">
+
+            <label for="mai_input">May</label>
+            <input type="text" id="mai_input">
+
+            <label for="ju_input">June</label>
+            <input type="text" id="ju_input">
+
+        </div>
+        
+        <div class="locationdatacontainer m">
+
+            <label for="jui_input">July</label>
+            <input type="text" id="jui_input">
+            
+            <label for="out_input">August</label>
+            <input type="text" id="out_input">
+            
+            <label for="sep_input">September</label>
+            <input type="text" id="sep_input">
+            
+            <label for="oct_input">October</label>
+            <input type="text" id="oct_input">
+
+            <label for="nouv_input">November</label>
+            <input type="text" id="nouv_input">
+
+            <label for="dec_input">December</label>
+            <input type="text" id="dec_input">
+        </div>
+     
+    </div>
+
+    <div class="accountBar" id="accountBar">
+        <div class="continfo">
+            <img src="img/icon1_Plan de travail 1.png" alt="">
+            <br>
+            <div class="infocontainer">
+                <h2>Name :</h2>
+                <h3 id="user-name"><p class="wait" id="wait">wait... </p></h3><br>
+                <h2>Email:</h2>
+                <h3 id="user-email"><p class="wait" id="wait">wait... </p></h3><br>
+                <h2>Payment:</h2>
+                <h3 id="Payment_account"><p class="wait" id="wait" style="color: rgba(0, 255, 0, 0.98);">Active </p></h3><br>
+                <h2>Account:</h2>
+                <h3 id="Payment_account" style="color: rgba(0, 255, 0, 0.98);">Active</h3><br>
+            </div>
+
+        </div>
+        <br>
+        <div class="butt">
+            <a href="#" id="iconshersh"><i class='bx bx-search-alt' ></i></a>
+            <a href="#" id="logoutbtn"><i class='bx bx-exit'></i></a>
+        </div>
+        <br>
+        <div class="searchcontainer" id="search-container">
+            <input type="text" id="search-input" placeholder="Search location...">
+            <button id="resherch"><i class='bx bx-search-alt' ></i></button>
+        </div>
+    </div>
+    <div class="addDataSelect" id="CreatprojectSelect"style="display: none;">
+        <a href="#" id="CreatprojectSelectCancel"><i class='bx bxs-x-square'></i></a>
+        <h1>Creat project</h1>
+           <p>Comparative Sites Analysis , creat your CSP or PV Projects :</p>
+           <br>            
+           <select  id="CreatprojectTypaSelect">
+               <option value="0" disabled selected>select</option>
+               <option value="1">CSP project</option>
+               <option value="2">PV project</option>                
+           </select><br><br>
+       </div>
+
+       <div class="locationdata" id="paymentmeth" style="font-size: 13px; display: none;">
+
+        <div class="container">
+            <a href="#" id="paymentmethCancel"><i class='bx bxs-x-square'></i></a>
+
+            <!-- Tab Content 3 -->
+            <div id="tab-3-content" class="tab-content-item">
+                <div class="text-center">
+                    <h1 class="text-lg">
+                        CHOOSE YOUR PLAN.
+                    </h1><br><br>
+                </div>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>free</th>
+                            <th>Premium</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monthly/service price</td>
+                            <td>$ 0.00</td>
+                            <td>$49.99</td>
+                        </tr>
+                        <tr>
+                            <td>Automatic data recovery</td>
+                            <td><i class='bx bx-x'></i></td>
+                            <td><i class='bx bx-check'></i></td>
+                        </tr>
+                        <tr>
+                            <td>Enter the data manually</td>
+                            <td><i class='bx bx-check'></i></td>
+                            <td><i class='bx bx-check'></i></td>
+                        </tr>
+                        <tr>
+                            <td>nombre of database you can use</td>
+                            <td>2</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td>nombre of location you can use</td>
+                            <td>2</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td>generate a report in PDF</td>
+                            <td><i class='bx bx-x'></i></td>
+                            <td><i class='bx bx-check'></i></td>
+                        </tr>
+                        <tr>
+                            <td>save the data that you have used in your account</td>
+                            <td><i class='bx bx-x'></i></td>
+                            <td><i class='bx bx-check'></i></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><a href="" class="startprimuim"><i class='bx bx-link-external' ></i></a></td>
+                            <td><a href="" class="startprimuim"><i class='bx bx-link-external' ></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+         </div>
+
+
+    </div>
+
+
+
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        <script type="module" src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+        <script type="module" src="https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js"></script>
+    
+        <script src="home.js" type="module"></script>
+
+</body>
+</html>
